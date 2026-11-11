@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [1.11.17] - 2026-11-11
+
+### Changed
+- The image and chart default to `ghcr.io/frederikberg/...`, and the README, chart metadata and package metadata link to the `frederikberg` GitHub account. The chart is published to `oci://ghcr.io/frederikberg/charts`; earlier chart versions need `image.repository` set to keep pulling.
+
 ## [1.11.16] - 2026-11-07
 
 ### Security

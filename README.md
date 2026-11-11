@@ -14,8 +14,8 @@ Your mailbox as PostgreSQL tables, in both directions.
 </tr>
 </table>
 
-[![CI](https://github.com/frederikb96/postimap/actions/workflows/ci.yaml/badge.svg)](https://github.com/frederikb96/postimap/actions/workflows/ci.yaml)
-[![Release](https://img.shields.io/github/v/release/frederikb96/postimap)](https://github.com/frederikb96/postimap/releases)
+[![CI](https://github.com/frederikberg/postimap/actions/workflows/ci.yaml/badge.svg)](https://github.com/frederikberg/postimap/actions/workflows/ci.yaml)
+[![Release](https://img.shields.io/github/v/release/frederikberg/postimap)](https://github.com/frederikberg/postimap/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 PostIMAP mirrors IMAP mailboxes, and CalDAV calendars and CardDAV address books, into PostgreSQL:
@@ -94,7 +94,7 @@ A Helm chart ships in [`charts/postimap`](charts/postimap) and is published to G
 artifact on every release:
 
 ```bash
-helm install postimap oci://ghcr.io/frederikb96/charts/postimap \
+helm install postimap oci://ghcr.io/frederikberg/charts/postimap \
   --version <version> -f my-values.yaml
 ```
 
@@ -164,7 +164,7 @@ Deliberately out of scope, to keep "dumb mirror plus outbox" the whole product:
 
 ## Built on PostIMAP
 
-[MailVerdict](https://github.com/frederikb96/mail-verdict) is a self-hosted mail client with an AI
+[MailVerdict](https://github.com/frederikberg/mail-verdict) is a self-hosted mail client with an AI
 layer. It reads and writes mail, calendars and contacts through PostIMAP alone, without a single
 IMAP or SMTP import of its own.
 

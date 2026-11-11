@@ -2,7 +2,7 @@ name: postimap
 
 services:
   postimap:
-    image: ghcr.io/frederikb96/postimap:latest
+    image: ghcr.io/frederikberg/postimap:latest
     volumes:
       - ./config-custom/config.override.yaml:/app/config-custom/config.override.yaml:ro
     environment:

@@ -3,7 +3,7 @@
 # Secret rather than chart-managed credentials, a private GHCR pull secret,
 # and a couple of POSTIMAP_* overrides via extraEnv.
 #
-#   helm install postimap oci://ghcr.io/frederikb96/charts/postimap \
+#   helm install postimap oci://ghcr.io/frederikberg/charts/postimap \
 #     --namespace mail --create-namespace \
 #     -f values-production.yaml
 
