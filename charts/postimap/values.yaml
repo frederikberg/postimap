@@ -14,7 +14,7 @@
 replicaCount: 1
 
 image:
-  repository: ghcr.io/frederikb96/postimap
+  repository: ghcr.io/frederikberg/postimap
   pullPolicy: IfNotPresent
   # -- Image tag. Defaults to the chart's appVersion when empty.
   tag: ""

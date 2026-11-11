@@ -1,6 +1,6 @@
 # PostIMAP Helm Chart
 
-Deploys [PostIMAP](https://github.com/frederikb96/postimap) -- a bidirectional IMAP-to-PostgreSQL sync microservice -- onto Kubernetes.
+Deploys [PostIMAP](https://github.com/frederikberg/postimap) -- a bidirectional IMAP-to-PostgreSQL sync microservice -- onto Kubernetes.
 
 ## Rendering from the registry
 
@@ -9,7 +9,7 @@ reference is an OCI URL, so piping straight into `kubectl apply -f -` fails with
 `apiVersion not set, kind not set`. Strip the preamble, or render from a local copy:
 
 ```bash
-helm pull oci://ghcr.io/frederikb96/charts/postimap --version <version> -d ./charts
+helm pull oci://ghcr.io/frederikberg/charts/postimap --version <version> -d ./charts
 helm template postimap ./charts/postimap-<version>.tgz -f values.yaml | kubectl apply -f -
 ```
 
@@ -34,7 +34,7 @@ If you need to migrate PostIMAP to a different node or resize it, expect a brief
 ## Install
 
 ```bash
-helm install postimap oci://ghcr.io/frederikb96/charts/postimap \
+helm install postimap oci://ghcr.io/frederikberg/charts/postimap \
   --namespace mail --create-namespace \
   --set config.database.host=<your-postgres-host> \
   --set secret.create=true \
@@ -45,7 +45,7 @@ For anything beyond a quick test, write a values file instead -- see [`examples/
 
 ### Configuration model
 
-The image bundles `config/config.yaml` with defaults for everything. This chart's `config:` value is a **sparse override** -- a ConfigMap rendered from it and mounted at `configOverridePath`, deep-merged onto the image's defaults at startup. Its structure mirrors `config/config.yaml` in the [repository](https://github.com/frederikb96/postimap/blob/main/config/config.yaml) exactly, so only set the keys you want to change:
+The image bundles `config/config.yaml` with defaults for everything. This chart's `config:` value is a **sparse override** -- a ConfigMap rendered from it and mounted at `configOverridePath`, deep-merged onto the image's defaults at startup. Its structure mirrors `config/config.yaml` in the [repository](https://github.com/frederikberg/postimap/blob/main/config/config.yaml) exactly, so only set the keys you want to change:
 
 ```yaml
 config:
@@ -126,7 +126,7 @@ To react to new mail and every other change in real time rather than polling, `L
 | Key | Default | Description |
 |---|---|---|
 | `replicaCount` | `1` | Pinned by `values.schema.json`. See [Why exactly one replica](#why-exactly-one-replica). |
-| `image.repository` | `ghcr.io/frederikb96/postimap` | Container image. |
+| `image.repository` | `ghcr.io/frederikberg/postimap` | Container image. |
 | `image.pullPolicy` | `IfNotPresent` | |
 | `image.tag` | `""` | Defaults to the chart's `appVersion`. |
 | `imagePullSecrets` | `[]` | For a private GHCR repository/tag. |

@@ -1,12 +1,12 @@
 {
   "name": "postimap",
-  "version": "1.11.16",
+  "version": "1.11.17",
   "description": "Bidirectional IMAP-to-PostgreSQL sync microservice",
   "private": false,
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/frederikb96/postimap.git"
+    "url": "git+https://github.com/frederikberg/postimap.git"
   },
   "type": "module",
   "engines": {
